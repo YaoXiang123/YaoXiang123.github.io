@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="知识管理,前端学习,基础知识," />
+  <meta name="keywords" content="知识管理,前端学习,基础知识,vue 知识," />
 
 
 
@@ -108,28 +108,18 @@
 
 
 
-<meta name="description" content="个人知识总结(三)设计模式 - 单例模式模块化开发  把一个项目按照页面或者功能分割成不同的任务,交给项目中不同的成员开发.开发结束之后将代码合并到一起.  多人协作开发的问题: 变量名 函数名 冲突 为了防止全局变量污染: 闭包但是闭包并不完美,所以选择搭配设计模式来进一步进行项目开发">
-<meta name="keywords" content="知识管理,前端学习,基础知识">
+<meta name="description" content="Vue学习笔记(三)vue实例的生命周期 什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！ 生命周期钩子：就是生命周期事件的别名而已； 生命周期钩子 = 生命周期函数 = 生命周期事件">
+<meta name="keywords" content="知识管理,前端学习,基础知识,vue 知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人知识总结(三)">
-<meta property="og:url" content="http://lingkeyu.com/2017/08/20/个人知识总结(三)/index.html">
+<meta property="og:title" content="Vue学习笔记(三)-vue实例的生命周期">
+<meta property="og:url" content="http://lingkeyu.com/2018/04/02/Vue学习笔记(三)-生命周期/index.html">
 <meta property="og:site_name" content="凌可语-lingkeyu">
-<meta property="og:description" content="个人知识总结(三)设计模式 - 单例模式模块化开发  把一个项目按照页面或者功能分割成不同的任务,交给项目中不同的成员开发.开发结束之后将代码合并到一起.  多人协作开发的问题: 变量名 函数名 冲突 为了防止全局变量污染: 闭包但是闭包并不完美,所以选择搭配设计模式来进一步进行项目开发">
+<meta property="og:description" content="Vue学习笔记(三)vue实例的生命周期 什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！ 生命周期钩子：就是生命周期事件的别名而已； 生命周期钩子 = 生命周期函数 = 生命周期事件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://lingkeyu.com/images/9F]%7DAF6LC[%7D]PY@W~X.png">
-<meta property="og:image" content="http://lingkeyu.com/images/CLPK]8[KVR9Q26ZZ22@Q8.png">
-<meta property="og:image" content="http://lingkeyu.com/images/BK3]IGX_[FJ_YI98JT59.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531047586818.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531134758170.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531231221143.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531231528243.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531231701604.png">
-<meta property="og:image" content="http://lingkeyu.com/images/1531476307585.png">
-<meta property="og:updated_time" content="2018-08-31T03:41:41.333Z">
+<meta property="og:updated_time" content="2018-08-31T11:22:31.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人知识总结(三)">
-<meta name="twitter:description" content="个人知识总结(三)设计模式 - 单例模式模块化开发  把一个项目按照页面或者功能分割成不同的任务,交给项目中不同的成员开发.开发结束之后将代码合并到一起.  多人协作开发的问题: 变量名 函数名 冲突 为了防止全局变量污染: 闭包但是闭包并不完美,所以选择搭配设计模式来进一步进行项目开发">
-<meta name="twitter:image" content="http://lingkeyu.com/images/9F]%7DAF6LC[%7D]PY@W~X.png">
+<meta name="twitter:title" content="Vue学习笔记(三)-vue实例的生命周期">
+<meta name="twitter:description" content="Vue学习笔记(三)vue实例的生命周期 什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！ 生命周期钩子：就是生命周期事件的别名而已； 生命周期钩子 = 生命周期函数 = 生命周期事件">
 
 
 
@@ -159,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="http://lingkeyu.com/2017/08/20/个人知识总结(三)/"/>
+  <link rel="canonical" href="http://lingkeyu.com/2018/04/02/Vue学习笔记(三)-生命周期/"/>
 
 
 
 
 
-  <title>个人知识总结(三) | 凌可语-lingkeyu</title>
+  <title>Vue学习笔记(三)-vue实例的生命周期 | 凌可语-lingkeyu</title>
   
 
 
@@ -328,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lingkeyu.com/2017/08/20/个人知识总结(三)/">
+    <link itemprop="mainEntityOfPage" href="http://lingkeyu.com/2018/04/02/Vue学习笔记(三)-生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="凌可语">
@@ -345,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">个人知识总结(三)</h2>
+          <h2 class="post-title" itemprop="name headline">Vue学习笔记(三)-vue实例的生命周期</h2>
         
 
         <div class="post-meta">
@@ -357,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T20:12:41+08:00">
-                2017-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T23:02:01+08:00">
+                2018-04-02
               </time>
             
 
@@ -389,7 +379,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,250字
+                  1,904字
                 </span>
               
 
@@ -426,124 +416,91 @@
       
 
       
-        <h4 id="个人知识总结-三"><a href="#个人知识总结-三" class="headerlink" title="个人知识总结(三)"></a><strong>个人知识总结(三)</strong></h4><h3 id="设计模式-单例模式"><a href="#设计模式-单例模式" class="headerlink" title="设计模式 - 单例模式"></a>设计模式 - 单例模式</h3><h4 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h4><p>  把一个项目按照页面或者功能分割成不同的任务,交给项目中不同的成员开发.开发结束之后将代码合并到一起.</p>
+        <h4 id="Vue学习笔记-三"><a href="#Vue学习笔记-三" class="headerlink" title="Vue学习笔记(三)"></a><strong>Vue学习笔记(三)</strong></h4><h2 id="vue实例的生命周期"><a href="#vue实例的生命周期" class="headerlink" title="vue实例的生命周期"></a><a href="https://cn.vuejs.org/v2/guide/instance.html#实例生命周期" target="_blank" rel="noopener">vue实例的生命周期</a></h2><ul>
+<li>什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！</li>
+<li><a href="https://cn.vuejs.org/v2/api/#选项-生命周期钩子" target="_blank" rel="noopener">生命周期钩子</a>：就是生命周期事件的别名而已；</li>
+<li>生命周期钩子 = 生命周期函数 = 生命周期事件<a id="more"></a></li>
+<li>主要的生命周期函数分类：<ul>
+<li>创建期间的生命周期函数：<ul>
+<li>beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性</li>
+<li>created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板</li>
+<li>beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中</li>
+<li>mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示</li>
+</ul>
+</li>
+<li>运行期间的生命周期函数：<ul>
+<li>beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点</li>
+<li>updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！</li>
+</ul>
+</li>
+<li>销毁期间的生命周期函数：<ul>
+<li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li>
+<li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue-resource-实现-get-post-jsonp请求"><a href="#vue-resource-实现-get-post-jsonp请求" class="headerlink" title="vue-resource 实现 get, post, jsonp请求"></a><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="noopener">vue-resource 实现 get, post, jsonp请求</a></h2><p>除了 vue-resource 之外，还可以使用 <code>axios</code> 的第三方包实现实现数据的请求</p>
+<ol>
+<li>之前的学习中，如何发起数据请求？</li>
+<li>常见的数据请求类型？  get  post jsonp</li>
+<li>测试的URL请求资源地址：<ul>
+<li>get请求地址： <a href="http://vue.studyit.io/api/getlunbo" target="_blank" rel="noopener">http://vue.studyit.io/api/getlunbo</a></li>
+<li>post请求地址：<a href="http://vue.studyit.io/api/post" target="_blank" rel="noopener">http://vue.studyit.io/api/post</a></li>
+<li>jsonp请求地址：<a href="http://vue.studyit.io/api/jsonp" target="_blank" rel="noopener">http://vue.studyit.io/api/jsonp</a></li>
+</ul>
+</li>
+<li>JSONP的实现原理<ul>
+<li>由于浏览器的安全性限制，不允许AJAX访问 协议不同、域名不同、端口号不同的 数据接口，浏览器认为这种访问不安全；</li>
+<li>可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP（注意：根据JSONP的实现原理，知晓，JSONP只支持Get请求）；</li>
+<li>具体实现过程：<ul>
+<li>先在客户端定义一个回调方法，预定义对数据的操作；</li>
+<li>再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；</li>
+<li>服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；</li>
+<li>客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；</li>
+</ul>
+</li>
+<li>带大家通过 Node.js ，来手动实现一个JSONP的请求例子；</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"> <span class="comment">// 导入解析 URL 地址的核心模块</span></span><br><span class="line"> <span class="keyword">const</span> urlModule = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"> <span class="keyword">const</span> server = http.createServer();</span><br><span class="line"> <span class="comment">// 监听 服务器的 request 请求事件，处理每个请求</span></span><br><span class="line"> server.on(<span class="string">'request'</span>, (req, res) =&gt; &#123;</span><br><span class="line">   <span class="keyword">const</span> url = req.url;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 解析客户端请求的URL地址</span></span><br><span class="line">   <span class="keyword">var</span> info = urlModule.parse(url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 如果请求的 URL 地址是 /getjsonp ，则表示要获取JSONP类型的数据</span></span><br><span class="line">   <span class="keyword">if</span> (info.pathname === <span class="string">'/getjsonp'</span>) &#123;</span><br><span class="line">     <span class="comment">// 获取客户端指定的回调函数的名称</span></span><br><span class="line">     <span class="keyword">var</span> cbName = info.query.callback;</span><br><span class="line">     <span class="comment">// 手动拼接要返回给客户端的数据对象</span></span><br><span class="line">     <span class="keyword">var</span> data = &#123;</span><br><span class="line">       name: <span class="string">'zs'</span>,</span><br><span class="line">       age: <span class="number">22</span>,</span><br><span class="line">       gender: <span class="string">'男'</span>,</span><br><span class="line">       hobby: [<span class="string">'吃饭'</span>, <span class="string">'睡觉'</span>, <span class="string">'运动'</span>]</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 拼接出一个方法的调用，在调用这个方法的时候，把要发送给客户端的数据，序列化为字符串，作为参数传递给这个调用的方法：</span></span><br><span class="line">     <span class="keyword">var</span> result = <span class="string">`<span class="subst">$&#123;cbName&#125;</span>(<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(data)&#125;</span>)`</span>;</span><br><span class="line">     <span class="comment">// 将拼接好的方法的调用，返回给客户端去解析执行</span></span><br><span class="line">     res.end(result);</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     res.end(<span class="string">'404'</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line"> server.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'server running at http://127.0.0.1:3000'</span>);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">5. vue-resource 的配置步骤：</span><br><span class="line"> + 直接在页面中，通过`script`标签，引入 `vue-resource` 的脚本文件；</span><br><span class="line"> + 注意：引用的先后顺序是：先引用 `Vue` 的脚本文件，再引用 `vue-resource` 的脚本文件；</span><br><span class="line">6. 发送get请求：</span><br><span class="line">```javascript</span><br><span class="line">getInfo() &#123; // get 方式获取数据</span><br><span class="line">  this.$http.get(&apos;http://127.0.0.1:8899/api/getlunbo&apos;).then(res =&gt; &#123;</span><br><span class="line">    console.log(res.body);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><p>发送post请求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">postInfo() &#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'http://127.0.0.1:8899/api/post'</span>;</span><br><span class="line">  <span class="comment">// post 方法接收三个参数：</span></span><br><span class="line">  <span class="comment">// 参数1： 要请求的URL地址</span></span><br><span class="line">  <span class="comment">// 参数2： 要发送的数据对象</span></span><br><span class="line">  <span class="comment">// 参数3： 指定post提交的编码类型为 application/x-www-form-urlencoded</span></span><br><span class="line">  <span class="keyword">this</span>.$http.post(url, &#123; <span class="attr">name</span>: <span class="string">'zs'</span> &#125;, &#123; <span class="attr">emulateJSON</span>: <span class="literal">true</span> &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.body);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发送JSONP请求获取数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jsonpInfo() &#123; <span class="comment">// JSONP形式从服务器获取数据</span></span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'http://127.0.0.1:8899/api/jsonp'</span>;</span><br><span class="line">  <span class="keyword">this</span>.$http.jsonp(url).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.body);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在2.x版本中<a href="https://cn.vuejs.org/v2/guide/list.html#显示过滤-排序结果" target="_blank" rel="noopener">手动实现筛选的方式</a>：</p>
 <ul>
-<li>多人协作开发的问题: 变量名 函数名 冲突</li>
-<li>为了防止全局变量污染: 闭包但是闭包并不完美,所以选择搭配设计模式来进一步进行项目开发<a id="more"></a>
-<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4></li>
-<li><code>表现形式 : 就是一个对象 : {  name : xxx  , age : function(){}  };</code></li>
-<li>定义 : 把描述同一功能的属性和方法放到一个对象[命名空间] </li>
-<li>在设计模式当中,这个person不仅仅是一个对象名,还是一个命名空间,多个命名空间是相互独立的,互不干扰</li>
-<li>好处 : 不受全局变量的污染和干扰.并且可以相互调用方法</li>
-<li>由来 :  单例模式的本质就是一个对象 , 它object类上的一个实例,实例与实例之间互不干扰,叫做单独的实例,简称 “单例”</li>
+<li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li>
 </ul>
-<h4 id="高级单例模式"><a href="#高级单例模式" class="headerlink" title="高级单例模式"></a>高级单例模式</h4><ul>
-<li>定义 :  在高级单例模式当中,我们不只会把一个对象赋值给一个命名空间,我们会让它先执行一个自执行函数, [就形成了一个闭包,一个不销毁的作用域] 在自执行函数中,返回一个对象给这个命名空间</li>
-<li>好处 : 可以在私有的作用于当中,创建很多属性和方法,仅需要把我们使用的属性和方法暴露在这个对象当中即可  <h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4></li>
-<li>把实现同一功能的代码放进一个函数,当实现类似功能时,只需要执行这个函数即可,传参数不同即可,减少代码的冗余,<code>&quot;高内聚 , 低耦合&quot;</code>  –&gt;  函数的封装</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;hr&gt; 输入筛选名称：</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> v-model=<span class="string">"searchName"</span>&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li>
 </ul>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
-<li>oop / op : 面向对象缩写 ,  面向对象思想</li>
-<li>定义 :  面向类的封装继承和多态 , 通过简单的实例化,调用其它方法和属性</li>
-<li>JS 就是通过面向对象的思想设计开发出来的</li>
-<li>需要了解  <code>对象</code> <code>类</code> <code>实例</code></li>
-<li>对象  :  万物皆对象,多为一种泛指,可以是任何物体</li>
-<li>类 :  对象中具有同一属性和特征的集合,  类又分为大类和小类   </li>
-<li><p>实例  :  就是类中的一个具体的细分我们研究当前实例具有哪些属性和方法,那么证明当前类中的其他实例也同样具有</p>
-<h4 id="JS中的内置类"><a href="#JS中的内置类" class="headerlink" title="JS中的内置类"></a>JS中的内置类</h4></li>
-<li><p>JS中的任何数据类型都是它所属的类,除了null 和 undefined</p>
-</li>
-<li>Number , String , Boolean , Object , Array , RegExp , Function , Date …</li>
-<li>div -&gt; HTMLDIVElement-&gt;HTML</li>
-<li>document –&gt; HTMLDocument -&gt; Document(getElementById)</li>
-<li>getElementById只在document的原型上,普通元素对象上不存在这个属性</li>
-<li>类的首字母都是大写</li>
-<li>类的执行通过new来执行</li>
-<li>Object 对象类 , 被称为 基类, 在任何数据类型都可以通过<code>__proto__</code>[原型链] 找到基类  Object</li>
-<li>内置类的原型只能新增, 不能用新的地址覆盖</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tbody&gt;</span><br><span class="line"></span><br><span class="line">      &lt;tr v-<span class="keyword">for</span>=<span class="string">"item in search(searchName)"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;&#123;&#123;item.id&#125;&#125;&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;td&gt;&#123;&#123;item.name&#125;&#125;&lt;/</span>td&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;&#123;&#123;item.ctime&#125;&#125;&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;td&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">          &lt;a href="#" @click.prevent="del(item.id)"&gt;删除&lt;/</span>a&gt;</span><br><span class="line"></span><br><span class="line">        &lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      &lt;/</span>tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="regexp">/tbody&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li>
 </ul>
-<h5 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h5><ul>
-<li>字面量方式</li>
-<li>实例化方式</li>
-<li>引用数据类型方式创建 var ary = new Arry (“1”)</li>
-</ul>
-<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><ul>
-<li>定义 :  当一个函数通过new关键字来执行的时候,这个函数就不是普通函数了,它是一个构造函数,也是一个自定义类,当前的函数名就是类名,这个函数的返回值就是类的实例</li>
-<li>为了让构造函数和普通函数有一个区别,我们建议写构造函数的时候首字母大写<code>[类名]</code></li>
-<li>注意 :  一般情况下 ,我们写业务逻辑的时候不会用到构造函数.但是在封装库,框架,插件以及组件的时候会用到构造函数模式</li>
-<li>构造函数执行的时候,如果没有参数的时候,小括号可以不用写</li>
-<li><code>let person = new Person</code></li>
-</ul>
-<h5 id="普通函数-和-构造函数的区别"><a href="#普通函数-和-构造函数的区别" class="headerlink" title="普通函数 和 构造函数的区别"></a>普通函数 和 构造函数的区别</h5><ul>
-<li>不同点 : 构造函数运行时，形成作用域之后，在代码运行之前，首先会给当前作用域初始化一个对象；并且让当前作用域下的this指向当前这个空对象；当代码运行结束，构造函数把函数体中this返回；</li>
-<li>构造函数如果不需要实参 , 可以省略执行的小括号;</li>
-<li>构造函数中的this 指向当前的实例</li>
-<li>在构造函数中.return一个基本类型值,对实例没有任何影响如果return出一个引用数据类型值,那么会把默认return的this给替换掉</li>
-<li>instanceof检测当前实例是否属于某个类,如果属于返回true 不属于返回false</li>
-<li>in  :  检测某个属性是否属于对象 ,如果属于返回true 不属于返回false</li>
-</ul>
-<h4 id="构造函数的执行过程"><a href="#构造函数的执行过程" class="headerlink" title="构造函数的执行过程"></a>构造函数的执行过程</h4><ul>
-<li>形成一个私有的作用域 </li>
-<li>形参赋值</li>
-<li>变量提升</li>
-<li>浏览器会创建一个对象 , [开辟一个新的堆内存] , 将这个对象指向了this [堆内存指针指向了this实例]   </li>
-<li>代码从上到下执行</li>
-<li>判断当前构造函数是否有return ,如果没有return默认将实例返回,如果有return , [<code>如果return的是基本数据类型,对实例没有影响; 如果是引用数据类型,那么实例就是该引用数据类型</code></li>
-<li>构造函数中  :  建议不要轻易return引用数据类型<br><img src="/images/9F]}AF6LC[}]PY@W~X.png" alt="Alt text"><h5 id="私有属性"><a href="#私有属性" class="headerlink" title="私有属性"></a>私有属性</h5><ul>
-<li>在构造函数中,给this添加属性值和方法,都属于当前实例的私有属性<h5 id="公有属性"><a href="#公有属性" class="headerlink" title="公有属性"></a>公有属性</h5></li>
-<li>当前实例通过<code>__proto__</code>找到所有的属性和方法都是属于当前实例的公有属性</li>
-<li>实例想要调取公有属性,直接可以调取,底层就是通过<code>__proto__</code>去找这个属性</li>
-<li>用 in 这种方式来判断, 当前属性名[公有属性 +  私有属性] 是否属于这个对象  <code>console.log(&quot;hasOwnProperty&quot; in person1);</code></li>
-<li>Object 类提供一个<code>hasOwnProperty</code>,这个方法判断当前属性是否是该实例的私有属性:  返回值是布尔值   <code>console.log(person1.hasOwnProperty(&quot;age&quot;))  //true</code><br><code>console.log(person1.hasOwnProperty(&quot;valueof&quot;))  //false</code></li>
-</ul>
-</li>
-</ul>
-<p><strong><code>自己封装一个方法,判断当前属性是否是当前实例的一个公有属性hasPubProperty</code></strong> </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">person1.__proto__.hasPubProperty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//console.log(1);</span></span><br><span class="line">  <span class="comment">//判断参数值是否是当前实例的一个属性</span></span><br><span class="line">  <span class="comment">//判断是否是当前实例的一个私有属性,且取反</span></span><br><span class="line">  <span class="keyword">return</span> str <span class="keyword">in</span> <span class="keyword">this</span> &amp;&amp; <span class="keyword">this</span>.hasOwnProperty(str)</span><br><span class="line">  或者</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">	if (str in this)&#123;</span></span><br><span class="line"><span class="comment">	if(!this.hasOwnProperty(str))&#123;</span></span><br><span class="line"><span class="comment">	   return true</span></span><br><span class="line"><span class="comment">     &#125;else&#123;</span></span><br><span class="line"><span class="comment">	   return false</span></span><br><span class="line"><span class="comment">     &#125;else&#123;</span></span><br><span class="line"><span class="comment">	   return false</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">   &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">person1.hasPubProperty(<span class="string">"a"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">search(name) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.list.filter(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x.name.indexOf(name) != <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Vue调试工具vue-devtools的安装步骤和使用"><a href="#Vue调试工具vue-devtools的安装步骤和使用" class="headerlink" title="Vue调试工具vue-devtools的安装步骤和使用"></a>Vue调试工具<code>vue-devtools</code>的安装步骤和使用</h2><p><a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=zh-CN" target="_blank" rel="noopener">Vue.js devtools - 翻墙安装方式 - 推荐</a></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>概念：Vue.js 允许你自定义过滤器，<strong>可被用作一些常见的文本格式化</strong>。过滤器可以用在两个地方：<strong>mustache 插值和 v-bind 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；</p>
+<h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><ol>
+<li>HTML元素：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;td&gt;&#123;&#123;item.ctime | dataFormat(<span class="string">'yyyy-mm-dd'</span>)&#125;&#125;&lt;<span class="regexp">/td&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>私有 <code>filters</code> 定义方式：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">filters: &#123; <span class="comment">// 私有局部过滤器，只能在 当前 VM 对象所控制的 View 区域进行使用</span></span><br><span class="line"></span><br><span class="line">    dataFormat(input, pattern = <span class="string">""</span>) &#123; <span class="comment">// 在参数列表中 通过 pattern="" 来指定形参默认值，防止报错</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(input);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取年月日</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> y = dt.getFullYear();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> m = (dt.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> d = dt.getDate().toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果 传递进来的字符串类型，转为小写之后，等于 yyyy-mm-dd，那么就返回 年-月-日</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 否则，就返回  年-月-日 时：分：秒</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (pattern.toLowerCase() === <span class="string">'yyyy-mm-dd'</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;y&#125;</span>-<span class="subst">$&#123;m&#125;</span>-<span class="subst">$&#123;d&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取时分秒</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> hh = dt.getHours().toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> mm = dt.getMinutes().toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> ss = dt.getSeconds().toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;y&#125;</span>-<span class="subst">$&#123;m&#125;</span>-<span class="subst">$&#123;d&#125;</span> <span class="subst">$&#123;hh&#125;</span>:<span class="subst">$&#123;mm&#125;</span>:<span class="subst">$&#123;ss&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>如果是公有属性返回true；如果不是返回false；</p>
+<p>使用ES6中的字符串新方法 String.prototype.padStart(maxLength, fillString=’’) 或 String.prototype.padEnd(maxLength, fillString=’’)来填充字符串；</p>
 </blockquote>
-<h4 id="原型检测属性封装"><a href="#原型检测属性封装" class="headerlink" title="原型检测属性封装"></a>原型检测属性封装</h4><pre><code>function hasPublicProperty(obj,attr) {
-    // attr 是obj的一个属性并且不是私有的；
-    /*if(attr in obj){
-        if(!obj.hasOwnProperty(attr)){
-            return true;
-        }
-    }else{
-        return false;
-    }
-    return false;*/
-    或者
-    return attr in obj &amp;&amp; !obj.hasOwnProperty(attr);
-}
-console.log(hasPublicProperty(obj, &quot;toString&quot;));
-</code></pre><h5 id="JS中的函数"><a href="#JS中的函数" class="headerlink" title="JS中的函数"></a>JS中的函数</h5><ul>
-<li>普通函数 , 类(自定义类和内置类)  , 函数类的实例</li>
-</ul>
-<h5 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h5><ul>
-<li>普通对象(对象数据类型)</li>
-<li>构造函数new出来的一个实例 也是一个对象</li>
-<li>类上面的原型也是一个对象</li>
-<li>函数也是一个对象</li>
-</ul>
-<h5 id="学习原型模式需要记住三句话"><a href="#学习原型模式需要记住三句话" class="headerlink" title="学习原型模式需要记住三句话"></a>学习原型模式需要记住三句话</h5><ul>
-<li>所有的函数数据类型( 函数 , 类 )都天生自带一个属性,叫做<code>prototype(原型)</code> ,  它是一个对象 ,既然是对象 , 那就是一个堆内存</li>
-<li>所有函数的原型上面(都是开辟的这个堆内存), 都天生自带一个属性,叫做<code>constructor(构造函数)</code> , 它指向当前类本身</li>
-<li>所有的对象都天生自带一个属性<code>__proto__</code>, 它指向当前所属类的原型</li>
-<li>函数有<code>prototype(原型)</code> <code>__proto__</code>;<br><img src="/images/CLPK]8[KVR9Q26ZZ22@Q8.png" alt="Alt text"></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> age = <span class="number">9</span>;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    People.prototype.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> person1 = <span class="keyword">new</span> People(<span class="string">'xiaihua'</span>);</span><br><span class="line">    <span class="keyword">let</span> person2 = <span class="keyword">new</span> People(<span class="string">'xiaoming'</span>);</span><br><span class="line">    <span class="comment">//person1属于People类</span></span><br><span class="line">    <span class="comment">//__proto__指向类People的原型prototype</span></span><br><span class="line">    <span class="built_in">console</span>.log(person1.__proto__ == People.prototype);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/BK3]IGX_[FJ_YI98JT59.png" alt="Alt text"></p>
-<h5 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h5><ul>
-<li>定义 :  一个实例要找属性 , 优先会去找自己的私有属性 , 如有自己的私有属性没有 , 那就通过<code>__ proto__</code>找到自己所属类的原型上的公有属性,如果公有属性还没有,继续通过<code>__proto__</code>找到自己的所属类的原型知道Object[基类]的原型上,一直找到基类还没有的话,直接返回undefined</li>
-</ul>
-<h5 id="Object类和Function类"><a href="#Object类和Function类" class="headerlink" title="Object类和Function类"></a>Object类和Function类</h5><ul>
-<li>Function类:</li>
-<li>所有的类都是通过函数的方式来创建 , 由此可以得知, 所有的类(包括基类Object)都是函数类的一个实例</li>
-<li>判断一个实例是否属于一个类:  instanceof<br><code>console.log(Number instanceof Function); //true</code><br><code>console.log(String instanceof Function); //true</code><br><code>console.log(Object instanceof Function); //true</code></li>
-<li>constructor : 通过实例来调用这个方法,指向当前类本身</li>
-<li>万物皆对象, js 中的任何数据类型都可以通过<strong>proto</strong><br><img src="/images/1531047586818.png" alt="Alt text"><br><img src="/images/1531134758170.png" alt="Alt text"><br><img src="/images/1531231221143.png" alt="Alt text"><br><img src="/images/1531231528243.png" alt="Alt text"><br><img src="/images/1531231701604.png" alt="Alt text"><br><img src="/images/1531476307585.png" alt="Alt text"></li>
-</ul>
 
       
     </div>
@@ -576,6 +533,8 @@ console.log(hasPublicProperty(obj, &quot;toString&quot;));
           
             <a href="/tags/基础知识/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
           
+            <a href="/tags/vue-知识/" rel="tag"><i class="fa fa-tag"></i> vue 知识</a>
+          
         </div>
       
 
@@ -587,8 +546,8 @@ console.log(hasPublicProperty(obj, &quot;toString&quot;));
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/17/个人知识总结(二)/" rel="next" title="个人知识总结(二)">
-                <i class="fa fa-chevron-left"></i> 个人知识总结(二)
+              <a href="/2018/03/26/vue学习笔记(二)/" rel="next" title="Vue学习笔记(二)">
+                <i class="fa fa-chevron-left"></i> Vue学习笔记(二)
               </a>
             
           </div>
@@ -596,10 +555,6 @@ console.log(hasPublicProperty(obj, &quot;toString&quot;));
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/17/vue学习笔记(一)/" rel="prev" title="Vue学习笔记(一)">
-                Vue学习笔记(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -755,7 +710,7 @@ console.log(hasPublicProperty(obj, &quot;toString&quot;));
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人知识总结-三"><span class="nav-number">1.</span> <span class="nav-text">个人知识总结(三)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式-单例模式"><span class="nav-number"></span> <span class="nav-text">设计模式 - 单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化开发"><span class="nav-number">1.</span> <span class="nav-text">模块化开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级单例模式"><span class="nav-number">3.</span> <span class="nav-text">高级单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂模式"><span class="nav-number">4.</span> <span class="nav-text">工厂模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number"></span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS中的内置类"><span class="nav-number">1.</span> <span class="nav-text">JS中的内置类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建类"><span class="nav-number">1.1.</span> <span class="nav-text">创建类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#普通函数-和-构造函数的区别"><span class="nav-number">2.1.</span> <span class="nav-text">普通函数 和 构造函数的区别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数的执行过程"><span class="nav-number">3.</span> <span class="nav-text">构造函数的执行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#私有属性"><span class="nav-number">3.1.</span> <span class="nav-text">私有属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#公有属性"><span class="nav-number">3.2.</span> <span class="nav-text">公有属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型检测属性封装"><span class="nav-number">4.</span> <span class="nav-text">原型检测属性封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JS中的函数"><span class="nav-number">4.1.</span> <span class="nav-text">JS中的函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象"><span class="nav-number">4.2.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#学习原型模式需要记住三句话"><span class="nav-number">4.3.</span> <span class="nav-text">学习原型模式需要记住三句话</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链"><span class="nav-number">4.4.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object类和Function类"><span class="nav-number">4.5.</span> <span class="nav-text">Object类和Function类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue学习笔记-三"><span class="nav-number">1.</span> <span class="nav-text">Vue学习笔记(三)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue实例的生命周期"><span class="nav-number"></span> <span class="nav-text">vue实例的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-resource-实现-get-post-jsonp请求"><span class="nav-number"></span> <span class="nav-text">vue-resource 实现 get, post, jsonp请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue调试工具vue-devtools的安装步骤和使用"><span class="nav-number"></span> <span class="nav-text">Vue调试工具vue-devtools的安装步骤和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number"></span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#私有过滤器"><span class="nav-number"></span> <span class="nav-text">私有过滤器</span></a></div>
             
 
           </div>
