@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/lingkeyu.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/lingkeyu.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/lingkeyu.ico?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="面试题,算法," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="凌可语-lingkeyu" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="阐述下 JavaScript 中的变量提升所谓提升，顾名思义即是 JavaScript 会将所有的声明提升到当前作用域的顶部。这也就意味着我们可以在某个变量声明前就使用该变量，不过虽然 JavaScript 会将声明提升到顶部，但是并不会执行真的初始化过程。">
+<meta name="keywords" content="面试题,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题-算法专题">
+<meta property="og:url" content="http://lingkeyu.com/2018/05/18/面试题-算法专题/index.html">
+<meta property="og:site_name" content="凌可语-lingkeyu">
+<meta property="og:description" content="阐述下 JavaScript 中的变量提升所谓提升，顾名思义即是 JavaScript 会将所有的声明提升到当前作用域的顶部。这也就意味着我们可以在某个变量声明前就使用该变量，不过虽然 JavaScript 会将声明提升到顶部，但是并不会执行真的初始化过程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-02T05:20:32.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题-算法专题">
+<meta name="twitter:description" content="阐述下 JavaScript 中的变量提升所谓提升，顾名思义即是 JavaScript 会将所有的声明提升到当前作用域的顶部。这也就意味着我们可以在某个变量声明前就使用该变量，不过虽然 JavaScript 会将声明提升到顶部，但是并不会执行真的初始化过程。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '小柯'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lingkeyu.com/2018/05/18/面试题-算法专题/"/>
+
+
+
+
+
+  <title>面试题-算法专题 | 凌可语-lingkeyu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/YaoXiang123" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">凌可语-lingkeyu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">如梦初醒 始料未及 别来无恙~</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lingkeyu.com/2018/05/18/面试题-算法专题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="凌可语">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lingkeyu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凌可语-lingkeyu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">面试题-算法专题</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T23:48:17+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,611字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="阐述下-JavaScript-中的变量提升"><a href="#阐述下-JavaScript-中的变量提升" class="headerlink" title="阐述下 JavaScript 中的变量提升"></a>阐述下 JavaScript 中的变量提升</h2><p><hr><br>所谓<code>提升</code>，顾名思义即是 JavaScript 会将所有的声明提升到当前作用域的顶部。这也就意味着我们可以在某个变量声明前就使用该变量，不过虽然 JavaScript 会将声明提升到顶部，但是并不会执行真的初始化过程。<br><a id="more"></a></p>
+<h2 id="阐述下-use-strict-的作用"><a href="#阐述下-use-strict-的作用" class="headerlink" title="阐述下 use strict; 的作用"></a>阐述下 use strict; 的作用</h2><p>use strict; 顾名思义也就是 JavaScript 会在所谓严格模式下执行，其一个主要的优势在于能够强制开发者避免使用未声明的变量。对于老版本的浏览器或者执行引擎则会自动忽略该指令。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example of strict mode</span></span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">catchThemAll();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">catchThemAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  x = <span class="number">3.14</span>; <span class="comment">// Error will be thrown</span></span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解释下什么是-Event-Bubbling-以及如何避免"><a href="#解释下什么是-Event-Bubbling-以及如何避免" class="headerlink" title="解释下什么是 Event Bubbling 以及如何避免"></a>解释下什么是 Event Bubbling 以及如何避免</h2><p>Event Bubbling 即指某个事件不仅会触发当前元素，还会以嵌套顺序传递到父元素中。直观而言就是对于某个子元素的点击事件同样会被父元素的点击事件处理器捕获。避免 Event Bubbling 的方式可以使用event.stopPropagation() 或者 IE 9 以下使用event.cancelBubble。</p>
+<h2 id="与-的区别是什么"><a href="#与-的区别是什么" class="headerlink" title="== 与 === 的区别是什么"></a>== 与 === 的区别是什么</h2><p>=== 也就是所谓的严格比较，关键的区别在于=== 会同时比较类型与值，而不是仅比较值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example of comparators</span></span><br><span class="line"><span class="number">0</span> == <span class="literal">false</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span> === <span class="literal">false</span>; <span class="comment">// false</span></span><br><span class="line"><span class="number">2</span> == <span class="string">'2'</span>; <span class="comment">// true</span></span><br><span class="line"><span class="number">2</span> === <span class="string">'2'</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h2 id="解释下-null-与-undefined-的区别"><a href="#解释下-null-与-undefined-的区别" class="headerlink" title="解释下 null 与 undefined 的区别"></a>解释下 null 与 undefined 的区别</h2><p>JavaScript 中，null 是一个可以被分配的值，设置为 null 的变量意味着其无值。而 undefined 则代表着某个变量虽然声明了但是尚未进行过任何赋值。</p>
+<h2 id="解释下-原型继承-与-类继承-的区别"><a href="#解释下-原型继承-与-类继承-的区别" class="headerlink" title="解释下 原型继承 与 类继承 的区别"></a>解释下 原型继承 与 类继承 的区别</h2><p>在类继承中，类是不可变的，不同的语言中对于多继承的支持也不一样，有些语言中还支持接口、final、abstract 的概念。而原型继承则更为灵活，原型本身是可以可变的，并且对象可能继承自多个原型。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="找出整型数组中乘积最大的三个数"><a href="#找出整型数组中乘积最大的三个数" class="headerlink" title="找出整型数组中乘积最大的三个数"></a>找出整型数组中乘积最大的三个数</h4><p>给定一个包含整数的无序数组，要求找出乘积最大的三个数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> unsorted_array = [<span class="number">-10</span>, <span class="number">7</span>, <span class="number">29</span>, <span class="number">30</span>, <span class="number">5</span>, <span class="number">-10</span>, <span class="number">-70</span>];</span><br><span class="line">computeProduct(unsorted_array); <span class="comment">// 21000</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortIntegers</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// greatest product is either (min1 * min2 * max1 || max1 * max2 * max3)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">computeProduct</span>(<span class="params">unsorted</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sorted_array = unsorted.sort(sortIntegers),</span><br><span class="line">    product1 = <span class="number">1</span>,</span><br><span class="line">    product2 = <span class="number">1</span>,</span><br><span class="line">    array_n_element = sorted_array.length - <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// Get the product of three largest integers in sorted array</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> x = array_n_element; x &gt; array_n_element - <span class="number">3</span>; x--) &#123;</span><br><span class="line">      product1 = product1 * sorted_array[x];</span><br><span class="line">  &#125;</span><br><span class="line">  product2 = sorted_array[<span class="number">0</span>] * sorted_array[<span class="number">1</span>] * sorted_array[array_n_element];</span><br><span class="line">  <span class="keyword">if</span> (product1 &gt; product2) <span class="keyword">return</span> product1;</span><br><span class="line">  <span class="keyword">return</span> product2</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="寻找连续数组中的缺失数"><a href="#寻找连续数组中的缺失数" class="headerlink" title="寻找连续数组中的缺失数"></a>寻找连续数组中的缺失数</h4><p>给定某无序数组，其包含了 n 个连续数字中的 n – 1 个，已知上下边界，要求以O(n)的复杂度找出缺失的数字。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The output of the function should be 8</span></span><br><span class="line"><span class="keyword">var</span> array_of_integers = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">7</span>];</span><br><span class="line"><span class="keyword">var</span> upper_bound = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">var</span> lower_bound = <span class="number">1</span>;</span><br><span class="line">findMissingNumber(array_of_integers, upper_bound, lower_bound); <span class="comment">//8</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMissingNumber</span>(<span class="params">array_of_integers, upper_bound, lower_bound</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Iterate through array to find the sum of the numbers</span></span><br><span class="line">  <span class="keyword">var</span> sum_of_integers = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array_of_integers.length; i++) &#123;</span><br><span class="line">    sum_of_integers += array_of_integers[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 以高斯求和公式计算理论上的数组和</span></span><br><span class="line">  <span class="comment">// Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2];</span></span><br><span class="line">  <span class="comment">// N is the upper bound and M is the lower bound</span></span><br><span class="line">  upper_limit_sum = (upper_bound * (upper_bound + <span class="number">1</span>)) / <span class="number">2</span>;</span><br><span class="line">  lower_limit_sum = (lower_bound * (lower_bound - <span class="number">1</span>)) / <span class="number">2</span>;</span><br><span class="line">  theoretical_sum = upper_limit_sum - lower_limit_sum;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="keyword">return</span> (theoretical_sum - sum_of_integers)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><p>给定某无序数组，要求去除数组中的重复数字并且返回新的无重复数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6 Implementation</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>];</span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(array)); <span class="comment">// [1, 2, 3, 5, 9, 8]</span></span><br><span class="line"><span class="comment">// ES5 Implementation</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>];</span><br><span class="line">uniqueArray(array); <span class="comment">// [1, 2, 3, 5, 9, 8]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueArray</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> hashmap = &#123;&#125;;</span><br><span class="line">  <span class="keyword">var</span> unique = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    <span class="comment">// If key returns null (unique), it is evaluated as false.</span></span><br><span class="line">    <span class="keyword">if</span>(!hashmap.hasOwnProperty([array[i]])) &#123;</span><br><span class="line">      hashmap[array[i]] = <span class="number">1</span>;</span><br><span class="line">      unique.push(array[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> unique;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组中元素最大差值计算"><a href="#数组中元素最大差值计算" class="headerlink" title="数组中元素最大差值计算"></a>数组中元素最大差值计算</h4><p>给定某无序数组，求取任意两个元素之间的最大差值，注意，这里要求差值计算中较小的元素下标必须小于较大元素的下标。譬如[7, 8, 4, 9, 9, 15, 3, 1, 10]这个数组的计算值是 11( 15 – 4 ) 而不是 14(15 – 1)，因为 15 的下标小于 1。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">7</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">15</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">10</span>];</span><br><span class="line"><span class="comment">// [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `11` based on the difference between `4` and `15`</span></span><br><span class="line"><span class="comment">// Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.</span></span><br><span class="line">findLargestDifference(array);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLargestDifference</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 如果数组仅有一个元素，则直接返回 -1</span></span><br><span class="line">  <span class="keyword">if</span> (array.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="comment">// current_min 指向当前的最小值</span></span><br><span class="line">  <span class="keyword">var</span> current_min = array[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">var</span> current_max_difference = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 遍历整个数组以求取当前最大差值，如果发现某个最大差值，则将新的值覆盖 current_max_difference</span></span><br><span class="line">  <span class="comment">// 同时也会追踪当前数组中的最小值，从而保证 `largest value in future` - `smallest value before it`</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (array[i] &gt; current_min &amp;&amp; (array[i] - current_min &gt; current_max_difference)) &#123;</span><br><span class="line">      current_max_difference = array[i] - current_min;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[i] &lt;= current_min) &#123;</span><br><span class="line">      current_min = array[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// If negative or 0, there is no largest difference</span></span><br><span class="line">  <span class="keyword">if</span> (current_max_difference &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">return</span> current_max_difference;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组中元素乘积"><a href="#数组中元素乘积" class="headerlink" title="数组中元素乘积"></a>数组中元素乘积</h4><p>给定某无序数组，要求返回新数组 output ，其中 output[i] 为原数组中除了下标为 i 的元素之外的元素乘积，要求以 O(n) 复杂度实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstArray = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> secondArray = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> thirdArray = [<span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">2</span>];</span><br><span class="line">productExceptSelf(firstArray); <span class="comment">// [8, 8, 4, 16]</span></span><br><span class="line">productExceptSelf(secondArray); <span class="comment">// [0, 0, 0, 0]</span></span><br><span class="line">productExceptSelf(thirdArray); <span class="comment">// [12, 12, 8, -12]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">productExceptSelf</span>(<span class="params">numArray</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> product = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> size = numArray.length;</span><br><span class="line">  <span class="keyword">var</span> output = [];</span><br><span class="line">  <span class="comment">// From first array: [1, 2, 4, 16]</span></span><br><span class="line">  <span class="comment">// The last number in this case is already in the right spot (allows for us)</span></span><br><span class="line">  <span class="comment">// to just multiply by 1 in the next step.</span></span><br><span class="line">  <span class="comment">// This step essentially gets the product to the left of the index at index + 1</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; size; x++) &#123;</span><br><span class="line">      output.push(product);</span><br><span class="line">      product = product * numArray[x];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// From the back, we multiply the current output element (which represents the product</span></span><br><span class="line">  <span class="comment">// on the left of the index, and multiplies it by the product on the right of the element)</span></span><br><span class="line">  <span class="keyword">var</span> product = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = size - <span class="number">1</span>; i &gt; <span class="number">-1</span>; i--) &#123;</span><br><span class="line">      output[i] = output[i] * product;</span><br><span class="line">      product = product * numArray[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组交集"><a href="#数组交集" class="headerlink" title="数组交集"></a>数组交集</h4><p>给定两个数组，要求求出两个数组的交集，注意，交集中的元素应该是唯一的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstArray = [<span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> secondArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>];</span><br><span class="line">intersection(firstArray, secondArray); <span class="comment">// [2, 1]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">intersection</span>(<span class="params">firstArray, secondArray</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// The logic here is to create a hashmap with the elements of the firstArray as the keys.</span></span><br><span class="line">  <span class="comment">// After that, you can use the hashmap's O(1) look up time to check if the element exists in the hash</span></span><br><span class="line">  <span class="comment">// If it does exist, add that element to the new array.</span></span><br><span class="line">  <span class="keyword">var</span> hashmap = &#123;&#125;;</span><br><span class="line">  <span class="keyword">var</span> intersectionArray = [];</span><br><span class="line">  firstArray.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    hashmap[element] = <span class="number">1</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// Since we only want to push unique elements in our case... we can implement a counter to keep track of what we already added</span></span><br><span class="line">  secondArray.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hashmap[element] === <span class="number">1</span>) &#123;</span><br><span class="line">      intersectionArray.push(element);</span><br><span class="line">      hashmap[element]++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> intersectionArray;</span><br><span class="line">  <span class="comment">// Time complexity O(n), Space complexity O(n)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="颠倒字符串"><a href="#颠倒字符串" class="headerlink" title="颠倒字符串"></a>颠倒字符串</h4><p>给定某个字符串，要求将其中单词倒转之后然后输出，譬如”Welcome to this Javascript Guide!” 应该输出为 “emocleW ot siht tpircsavaJ !ediuG”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"Welcome to this Javascript Guide!"</span>;</span><br><span class="line"><span class="comment">// Output becomes !ediuG tpircsavaJ siht ot emocleW</span></span><br><span class="line"><span class="keyword">var</span> reverseEntireSentence = reverseBySeparator(string, <span class="string">""</span>);</span><br><span class="line"><span class="comment">// Output becomes emocleW ot siht tpircsavaJ !ediuG</span></span><br><span class="line"><span class="keyword">var</span> reverseEachWord = reverseBySeparator(reverseEntireSentence, <span class="string">" "</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseBySeparator</span>(<span class="params">string, separator</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> string.split(separator).reverse().join(separator);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="乱序同字母字符串"><a href="#乱序同字母字符串" class="headerlink" title="乱序同字母字符串"></a>乱序同字母字符串</h4><p>给定两个字符串，判断是否颠倒字母而成的字符串，譬如Mary与Army就是同字母而顺序颠倒：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstWord = <span class="string">"Mary"</span>;</span><br><span class="line"><span class="keyword">var</span> secondWord = <span class="string">"Army"</span>;</span><br><span class="line">isAnagram(firstWord, secondWord); <span class="comment">// true</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isAnagram</span>(<span class="params">first, second</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// For case insensitivity, change both words to lowercase.</span></span><br><span class="line">  <span class="keyword">var</span> a = first.toLowerCase();</span><br><span class="line">  <span class="keyword">var</span> b = second.toLowerCase();</span><br><span class="line">  <span class="comment">// Sort the strings, and join the resulting array to a string. Compare the results</span></span><br><span class="line">  a = a.split(<span class="string">""</span>).sort().join(<span class="string">""</span>);</span><br><span class="line">  b = b.split(<span class="string">""</span>).sort().join(<span class="string">""</span>);</span><br><span class="line">  <span class="keyword">return</span> a === b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="会问字符串"><a href="#会问字符串" class="headerlink" title="会问字符串"></a>会问字符串</h4><p>判断某个字符串是否为回文字符串，譬如racecar与race car都是回文字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">isPalindrome(<span class="string">"racecar"</span>); <span class="comment">// true</span></span><br><span class="line">isPalindrome(<span class="string">"race Car"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Replace all non-letter chars with "" and change to lowercase</span></span><br><span class="line">  <span class="keyword">var</span> lettersOnly = word.toLowerCase().replace(<span class="regexp">/\s/g</span>, <span class="string">""</span>);</span><br><span class="line">  <span class="comment">// Compare the string with the reversed version of the string</span></span><br><span class="line">  <span class="keyword">return</span> lettersOnly === lettersOnly.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><h4 id="使用两个栈实现入队与出队"><a href="#使用两个栈实现入队与出队" class="headerlink" title="使用两个栈实现入队与出队"></a>使用两个栈实现入队与出队</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputStack = []; <span class="comment">// First stack</span></span><br><span class="line"><span class="keyword">var</span> outputStack = []; <span class="comment">// Second stack</span></span><br><span class="line"><span class="comment">// For enqueue, just push the item into the first stack</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enqueue</span>(<span class="params">stackInput, item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> stackInput.push(item);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dequeue</span>(<span class="params">stackInput, stackOutput</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Reverse the stack such that the first element of the output stack is the</span></span><br><span class="line">  <span class="comment">// last element of the input stack. After that, pop the top of the output to</span></span><br><span class="line">  <span class="comment">// get the first element that was ever pushed into the input stack</span></span><br><span class="line">  <span class="keyword">if</span> (stackOutput.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span>(stackInput.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> elementToOutput = stackInput.pop();</span><br><span class="line">      stackOutput.push(elementToOutput);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> stackOutput.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断大括号是否闭合"><a href="#判断大括号是否闭合" class="headerlink" title="判断大括号是否闭合"></a>判断大括号是否闭合</h4><p>创建一个函数来判断给定的表达式中的大括号是否闭合：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="string">"&#123;&#123;&#125;&#125;&#123;&#125;&#123;&#125;"</span></span><br><span class="line"><span class="keyword">var</span> expressionFalse = <span class="string">"&#123;&#125;&#123;&#123;&#125;"</span>;</span><br><span class="line">isBalanced(expression); <span class="comment">// true</span></span><br><span class="line">isBalanced(expressionFalse); <span class="comment">// false</span></span><br><span class="line">isBalanced(<span class="string">""</span>); <span class="comment">// true</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBalanced</span>(<span class="params">expression</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> checkString = expression;</span><br><span class="line">  <span class="keyword">var</span> stack = [];</span><br><span class="line">  <span class="comment">// If empty, parentheses are technically balanced</span></span><br><span class="line">  <span class="keyword">if</span> (checkString.length &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; checkString.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(checkString[i] === <span class="string">'&#123;'</span>) &#123;</span><br><span class="line">      stack.push(checkString[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (checkString[i] === <span class="string">'&#125;'</span>) &#123;</span><br><span class="line">      <span class="comment">// Pop on an empty array is undefined</span></span><br><span class="line">      <span class="keyword">if</span> (stack.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// If the array is not empty, it is not balanced</span></span><br><span class="line">  <span class="keyword">if</span> (stack.pop()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><h4 id="二进制转换"><a href="#二进制转换" class="headerlink" title="二进制转换"></a>二进制转换</h4><p>通过某个递归函数将输入的数字转化为二进制字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">decimalToBinary(<span class="number">3</span>); <span class="comment">// 11</span></span><br><span class="line">decimalToBinary(<span class="number">8</span>); <span class="comment">// 1000</span></span><br><span class="line">decimalToBinary(<span class="number">1000</span>); <span class="comment">// 1111101000</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decimalToBinary</span>(<span class="params">digit</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(digit &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// If digit is not divisible by 2 then recursively return proceeding</span></span><br><span class="line">    <span class="comment">// binary of the digit minus 1, 1 is added for the leftover 1 digit</span></span><br><span class="line">    <span class="keyword">if</span> (digit % <span class="number">2</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> decimalToBinary((digit - <span class="number">1</span>) / <span class="number">2</span>) + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// Recursively return proceeding binary digits</span></span><br><span class="line">      <span class="keyword">return</span> decimalToBinary(digit / <span class="number">2</span>) + <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Exit condition</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">recursiveBinarySearch</span>(<span class="params">array, value, leftPosition, rightPosition</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Value DNE</span></span><br><span class="line">  <span class="keyword">if</span> (leftPosition &gt; rightPosition) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">var</span> middlePivot = <span class="built_in">Math</span>.floor((leftPosition + rightPosition) / <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">if</span> (array[middlePivot] === value) &#123;</span><br><span class="line">    <span class="keyword">return</span> middlePivot;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middlePivot] &gt; value) &#123;</span><br><span class="line">    <span class="keyword">return</span> recursiveBinarySearch(array, value, leftPosition, middlePivot - <span class="number">1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> recursiveBinarySearch(array, value, middlePivot + <span class="number">1</span>, rightPosition);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="判断是否为-2-的指数值"><a href="#判断是否为-2-的指数值" class="headerlink" title="判断是否为 2 的指数值"></a>判断是否为 2 的指数值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">isPowerOfTwo(<span class="number">4</span>); <span class="comment">// true</span></span><br><span class="line">isPowerOfTwo(<span class="number">64</span>); <span class="comment">// true</span></span><br><span class="line">isPowerOfTwo(<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line">isPowerOfTwo(<span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line">isPowerOfTwo(<span class="number">-1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="comment">// For the non-zero case:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPowerOfTwo</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// `&amp;` uses the bitwise n.</span></span><br><span class="line">  <span class="comment">// In the case of number = 4; the expression would be identical to:</span></span><br><span class="line">  <span class="comment">// `return (4 &amp; 3 === 0)`</span></span><br><span class="line">  <span class="comment">// In bitwise, 4 is 100, and 3 is 011. Using &amp;, if two values at the same</span></span><br><span class="line">  <span class="comment">// spot is 1, then result is 1, else 0. In this case, it would return 000,</span></span><br><span class="line">  <span class="comment">// and thus, 4 satisfies are expression.</span></span><br><span class="line">  <span class="comment">// In turn, if the expression is `return (5 &amp; 4 === 0)`, it would be false</span></span><br><span class="line">  <span class="comment">// since it returns 101 &amp; 100 = 100 (NOT === 0)</span></span><br><span class="line">  <span class="keyword">return</span> number &amp; (number - <span class="number">1</span>) === <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// For zero-case:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPowerOfTwoZeroCase</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (number !== <span class="number">0</span>) &amp;&amp; ((number &amp; (number - <span class="number">1</span>)) === <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+        <div>
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/02/Vue学习笔记(三)-生命周期/" rel="next" title="Vue学习笔记(三)-vue实例的生命周期">
+                <i class="fa fa-chevron-left"></i> Vue学习笔记(三)-vue实例的生命周期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b7587f8bf792868" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/lingkeyu.jpg"
+                alt="凌可语" />
+            
+              <p class="site-author-name" itemprop="name">凌可语</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/YaoXiang123" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/lingkeyu" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阐述下-JavaScript-中的变量提升"><span class="nav-number">1.</span> <span class="nav-text">阐述下 JavaScript 中的变量提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阐述下-use-strict-的作用"><span class="nav-number">2.</span> <span class="nav-text">阐述下 use strict; 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释下什么是-Event-Bubbling-以及如何避免"><span class="nav-number">3.</span> <span class="nav-text">解释下什么是 Event Bubbling 以及如何避免</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与-的区别是什么"><span class="nav-number">4.</span> <span class="nav-text">== 与 === 的区别是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释下-null-与-undefined-的区别"><span class="nav-number">5.</span> <span class="nav-text">解释下 null 与 undefined 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释下-原型继承-与-类继承-的区别"><span class="nav-number">6.</span> <span class="nav-text">解释下 原型继承 与 类继承 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">6.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#找出整型数组中乘积最大的三个数"><span class="nav-number">6.1.1.</span> <span class="nav-text">找出整型数组中乘积最大的三个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找连续数组中的缺失数"><span class="nav-number">6.1.2.</span> <span class="nav-text">寻找连续数组中的缺失数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组去重"><span class="nav-number">6.1.3.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组中元素最大差值计算"><span class="nav-number">6.1.4.</span> <span class="nav-text">数组中元素最大差值计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组中元素乘积"><span class="nav-number">6.1.5.</span> <span class="nav-text">数组中元素乘积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组交集"><span class="nav-number">6.1.6.</span> <span class="nav-text">数组交集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">6.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#颠倒字符串"><span class="nav-number">6.2.1.</span> <span class="nav-text">颠倒字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乱序同字母字符串"><span class="nav-number">6.2.2.</span> <span class="nav-text">乱序同字母字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#会问字符串"><span class="nav-number">6.2.3.</span> <span class="nav-text">会问字符串</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈与队列"><span class="nav-number">6.3.</span> <span class="nav-text">栈与队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用两个栈实现入队与出队"><span class="nav-number">6.3.1.</span> <span class="nav-text">使用两个栈实现入队与出队</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断大括号是否闭合"><span class="nav-number">6.3.2.</span> <span class="nav-text">判断大括号是否闭合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归"><span class="nav-number">6.4.</span> <span class="nav-text">递归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制转换"><span class="nav-number">6.4.1.</span> <span class="nav-text">二进制转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二分搜索"><span class="nav-number">6.4.2.</span> <span class="nav-text">二分搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">6.5.</span> <span class="nav-text">数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断是否为-2-的指数值"><span class="nav-number">6.5.1.</span> <span class="nav-text">判断是否为 2 的指数值</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+  <i class="fa fa-star"></i>
+    <!-- <i class="fa fa-user"></i>-->
+  </span>
+  <span class="author" itemprop="copyrightHolder">凌可语</span>
+
+  
+</div>
+
+
+    <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+    </div>
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">珍惜所有的不期而遇</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</body>
+</html>
