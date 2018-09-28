@@ -116,10 +116,15 @@
 <meta property="og:site_name" content="凌可语-lingkeyu">
 <meta property="og:description" content="如何防止XSS攻击？  主要包括:  XSS 攻击的介绍 XSS 攻击的分类 XSS 攻击的预防和检测 XSS 攻击的总结 XSS 攻击案例">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T07:36:30.243Z">
+<meta property="og:image" content="http://lingkeyu.com/images/1538120704867.png">
+<meta property="og:image" content="http://lingkeyu.com/images/1538120882320.png">
+<meta property="og:image" content="http://lingkeyu.com/images/1538121091829.png">
+<meta property="og:image" content="http://lingkeyu.com/images/1538121148931.png">
+<meta property="og:updated_time" content="2018-09-28T07:59:46.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何防止XSS攻击">
 <meta name="twitter:description" content="如何防止XSS攻击？  主要包括:  XSS 攻击的介绍 XSS 攻击的分类 XSS 攻击的预防和检测 XSS 攻击的总结 XSS 攻击案例">
+<meta name="twitter:image" content="http://lingkeyu.com/images/1538120704867.png">
 
 
 
@@ -401,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,395字
+                  6,254字
                 </span>
               
 
@@ -417,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  24分钟
+                  23分钟
                 </span>
               
             </div>
@@ -468,10 +473,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">""</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;button&gt;搜索&lt;/button&gt;</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">  您搜索的关键词是："</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器无法分辨出 <script>alert(‘XSS’);</script> 是恶意代码，因而将其执行。<br>这里不仅仅 div 的内容被注入了，而且 input 的 value 属性也被注入， alert 会弹出两次。<br>面对这种情况，我们应该如何进行防范呢？<br>其实，这只是浏览器把用户的输入当成了脚本进行了执行。那么只要告诉浏览器这段内容是文本就可以了。<br>聪明的小明很快找到解决方法，把这个漏洞修复：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">"&lt;%= escapeHTML(getParameter("</span>keyword<span class="string">")) %&gt;"</span>&gt;</span><br><span class="line">&lt;button&gt;搜索&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;div&gt;</span></span><br><span class="line"><span class="regexp">  您搜索的关键词是：&lt;%= escapeHTML(getParameter("keyword")) %&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>escapeHTML()</strong>按照如下规则进行转义：</p>
-<table><br><thead><br><tr><br><th>字符</th><br><th>转义后的字符</th><br></tr><br></thead><br><tbody><br><tr><br><td><code>&amp;</code></td><br><td><code>&amp;amp;</code></td><br></tr><br><tr><br><td><code>&lt;</code></td><br><td><code>&amp;lt;</code></td><br></tr><br><tr><br><td><code>&gt;</code></td><br><td><code>&amp;gt;</code></td><br></tr><br><tr><br><td><code>“</code></td><br><td><code>&amp;quot;</code></td><br></tr><br><tr><br><td><code>‘</code></td><br><td><code>&amp;#x27;</code></td><br></tr><br><tr><br><td><code>/</code></td><br><td><code>&amp;#x2F;</code></td><br></tr><br></tbody><br></table>
-
-
+<p><strong>escapeHTML()</strong>按照如下规则进行转义：<br><img src="/images/1538120704867.png" alt="Alt text"></p>
 <p>经过了转义函数的处理后，最终浏览器接收到的响应为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> value=<span class="string">"&amp;quot;&amp;gt;&amp;lt;script&amp;gt;alert(&amp;#x27;XSS&amp;#x27;);&amp;lt;&amp;#x2F;script&amp;gt;"</span>&gt;</span><br><span class="line">&lt;button&gt;搜索&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;div&gt;</span></span><br><span class="line"><span class="regexp">  您搜索的关键词是：&amp;quot;&amp;gt;&amp;lt;script&amp;gt;alert(&amp;#x27;XSS&amp;#x27;);&amp;lt;&amp;#x2F;script&amp;gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
 <p>恶意代码都被转义，不再被浏览器执行，而且搜索词能够完美的在页面显示出来。</p>
@@ -516,12 +518,7 @@
 <p>插入 JSON 的地方不能使用 <code>escapeHTML()</code>，因为转义<code>&quot;</code>后，JSON 格式会被破坏。<br>但安全组又发现有漏洞，原来这样内联 JSON 也是不安全的：</p>
 <p>当 JSON 中包含<code>U+2028</code>或 <code>U+2029</code>这两个字符时，不能作为 JavaScript 的字面量使用，否则会抛出语法错误。<br>当 JSON 中包含字符串 <code>&lt;/script&gt;</code> 时，当前的 script 标签将会被闭合，后面的字符串内容浏览器会按照 HTML 进行解析；通过增加下一个 <code>&lt;script&gt;</code> 标签等方法就可以完成注入。</p>
 <p>于是我们又要实现一个 escapeEmbedJSON() 函数，对内联 JSON 进行转义。<br>转义规则如下：</p>
-<p><th>字符</th></p>
-<p><th>转义后的字符</th><br><br></p>
-<p><tbody></tbody></p>
-<p><tr></tr></p>
-<td><code>U+2028</code></td><br><td><code>\u2028</code></td><br><br><tr><br><td><code>U+2029</code></td><br><td><code>\u2029</code></td><br></tr><br><tr><br><td><code>&lt;</code></td><br><td><code>\u003c</code></td>
-
+<p><img src="/images/1538120882320.png" alt="Alt text"></p>
 <p>修复后的代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> initData = <span class="xml"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">escapeEmbedJSON</span>(<span class="attr">data.toJSON</span>()) %&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h4 id="漏洞总结"><a href="#漏洞总结" class="headerlink" title="漏洞总结"></a>漏洞总结</h4><blockquote>
@@ -553,7 +550,7 @@
 <li>Cookie （可能来自其他子域注入）</li>
 </ul>
 </blockquote>
-<h4 id="XSS-分类"><a href="#XSS-分类" class="headerlink" title="XSS 分类"></a>XSS 分类</h4><p>根据攻击的来源，XSS 攻击可分为存储型、反射型和 DOM 型三种。<br>|类型|存储区<em>|插入点</em>|<br>|-|-|<br>|存储型 XSS|后端数据库|HTML|<br>|反射型 XSS|URL|HTML|<br>|DOM 型 XSS|后端数据库/前端存储/URL|前端 JavaScript|</p>
+<h4 id="XSS-分类"><a href="#XSS-分类" class="headerlink" title="XSS 分类"></a>XSS 分类</h4><p><img src="/images/1538121091829.png" alt="Alt text"></p>
 <ul>
 <li>存储区：恶意代码存放的位置。</li>
 <li>插入点：由谁取得恶意代码，并插入到网页上。</li>
@@ -638,9 +635,7 @@
 <p>但纯前端渲染还需注意避免 DOM 型 XSS 漏洞（例如<code>onload</code>事件和 href 中的 <code>javascript:xxx</code>等，请参考下文”预防 DOM 型 XSS 攻击“部分）。</p>
 <p>在很多内部、管理系统中，采用纯前端渲染是非常合适的。但对于性能要求高，或有 SEO 需求的页面，我们仍然要面对拼接 HTML 的问题。</p>
 <h5 id="转义-HTML"><a href="#转义-HTML" class="headerlink" title="转义 HTML"></a>转义 HTML</h5><p>如果拼接 HTML 是必要的，就需要采用合适的转义库，对 HTML 模板各处插入点进行充分的转义。</p>
-<p>常用的模板引擎，如 doT.js、ejs、FreeMarker 等，对于 HTML 转义通常只有一个规则，就是把<code>&amp; &lt; &gt; &quot; &#39; /</code>这几个字符转义掉，确实能起到一定的 XSS 防护作用，但并不完善：</p>
-<table><br><thead><br><tr><br><th>XSS 安全漏洞</th><br><th>简单转义是否有防护作用</th><br></tr><br></thead><br><tbody><br><tr><br><td>HTML 标签文字内容</td><br><td>有</td><br></tr><br><tr><br><td>HTML 属性值</td><br><td>有</td><br></tr><br><tr><br><td>CSS 内联样式</td><br><td>无</td><br></tr><br><tr><br><td>内联 JavaScript</td><br><td>无</td><br></tr><br><tr><br><td>内联 JSON</td><br><td>无</td><br></tr><br><tr><br><td>跳转链接</td><br><td>无</td><br></tr><br></tbody><br></table>
-
+<p>常用的模板引擎，如 doT.js、ejs、FreeMarker 等，对于 HTML 转义通常只有一个规则，就是把<code>&amp; &lt; &gt; &quot; &#39; /</code>这几个字符转义掉，确实能起到一定的 XSS 防护作用，但并不完善：<br><img src="/images/1538121148931.png" alt="Alt text"></p>
 <p>所以要完善 XSS 防护措施，我们要使用更完善更细致的转义策略。</p>
 <h4 id="预防-DOM-型-XSS-攻击"><a href="#预防-DOM-型-XSS-攻击" class="headerlink" title="预防 DOM 型 XSS 攻击"></a>预防 DOM 型 XSS 攻击</h4><p>DOM 型 XSS 攻击，实际上就是网站前端 JavaScript 代码本身不够严谨，把不可信的数据当作代码执行了。<br>在使用<code>.innerHTML</code>、<code>.outerHTML</code>、<code>document.write()</code>时要特别小心，不要把不可信的数据作为 HTML 插到页面上，而应尽量使用 <code>.textContent</code>、<code>.setAttribute()</code> 等。<br>如果用<code>Vue/React</code>技术栈，并且不使用<code>v-html/dangerouslySetInnerHTML</code> 功能，就在前端 render 阶段避免 <code>innerHTML</code>、<code>outerHTML</code> 的 XSS 隐患。<br>DOM 中的内联事件监听器，如<code>location、onclick、onerror、onload、onmouseover</code>等，<code>&lt;a&gt;</code> 标签的<code>href</code> 属性，JavaScript 的 <code>eval()、setTimeout()、setInterval()</code>等，都能把字符串作为代码运行。如果不可信的数据拼接到字符串中传递给这些 API，很容易产生安全隐患，请务必避免。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 内联事件监听器中包含恶意代码 --&gt;</span><br><span class="line">&lt;img onclick=<span class="string">"UNTRUSTED"</span> onerror=<span class="string">"UNTRUSTED"</span> src=<span class="string">"data:image/png,"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 链接内包含恶意代码 --&gt;</span><br><span class="line">&lt;a href=<span class="string">"UNTRUSTED"</span>&gt;<span class="number">1</span>&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ setTimeout()/</span>setInterval() 中调用恶意代码</span><br><span class="line">setTimeout(<span class="string">"UNTRUSTED"</span>)</span><br><span class="line">setInterval(<span class="string">"UNTRUSTED"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// location 调用恶意代码</span></span><br><span class="line">location.href = <span class="string">'UNTRUSTED'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// eval() 中调用恶意代码</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"UNTRUSTED"</span>)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
@@ -706,7 +701,7 @@
 <blockquote>
 <p>本文来源：掘金<br>链接：<a href="https://juejin.im/post/5bad9140e51d450e935c6d64" target="_blank" rel="noopener">https://juejin.im/post/5bad9140e51d450e935c6d64</a></p>
 </blockquote>
-</tr>
+
       
     </div>
     
