@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue,vue-cli," />
 
 
 
@@ -108,13 +108,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="凌可语-lingkeyu">
-<meta property="og:url" content="http://lingkeyu.com/categories/XSS攻击/index.html">
+<meta name="description" content="Vue2.0搭建Vue脚手架（vue-cli）   随着vue.js越来越火爆，更多的项目都用到vue进行开发，在实际的开发项目中如何搭建开发脚手架呢，今天跟大家分享一下，首先需要了解的知识：">
+<meta name="keywords" content="vue,vue-cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2.0搭建Vue脚手架（vue-cli）">
+<meta property="og:url" content="http://lingkeyu.com/2018/09/10/Vue2.0搭建Vue脚手架（vue-cli）/index.html">
 <meta property="og:site_name" content="凌可语-lingkeyu">
+<meta property="og:description" content="Vue2.0搭建Vue脚手架（vue-cli）   随着vue.js越来越火爆，更多的项目都用到vue进行开发，在实际的开发项目中如何搭建开发脚手架呢，今天跟大家分享一下，首先需要了解的知识：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://lingkeyu.com/2018/09/10/Vue2.0搭建Vue脚手架（vue-cli）/1.jpg">
+<meta property="og:image" content="http://lingkeyu.com/images/1538124820712.png">
+<meta property="og:image" content="http://lingkeyu.com/images/2.jpg">
+<meta property="og:image" content="http://lingkeyu.com/images/1538124497114.png">
+<meta property="og:updated_time" content="2018-09-28T09:05:49.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="凌可语-lingkeyu">
+<meta name="twitter:title" content="Vue2.0搭建Vue脚手架（vue-cli）">
+<meta name="twitter:description" content="Vue2.0搭建Vue脚手架（vue-cli）   随着vue.js越来越火爆，更多的项目都用到vue进行开发，在实际的开发项目中如何搭建开发脚手架呢，今天跟大家分享一下，首先需要了解的知识：">
+<meta name="twitter:image" content="http://lingkeyu.com/2018/09/10/Vue2.0搭建Vue脚手架（vue-cli）/1.jpg">
 
 
 
@@ -144,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://lingkeyu.com/categories/XSS攻击/"/>
+  <link rel="canonical" href="http://lingkeyu.com/2018/09/10/Vue2.0搭建Vue脚手架（vue-cli）/"/>
 
 
 
 
 
-  <title>分类: XSS攻击 | 凌可语-lingkeyu</title>
+  <title>Vue2.0搭建Vue脚手架（vue-cli） | 凌可语-lingkeyu</title>
   
 
 
@@ -169,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
 <a href="https://github.com/YaoXiang123" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -299,55 +309,320 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>XSS攻击<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lingkeyu.com/2018/09/10/Vue2.0搭建Vue脚手架（vue-cli）/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="凌可语">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lingkeyu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凌可语-lingkeyu">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/26/如何防止XSS攻击/" itemprop="url">
-              
-                <span itemprop="name">如何防止XSS攻击</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Vue2.0搭建Vue脚手架（vue-cli）</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T19:25:12+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T11:34:12+08:00">
+                2018-09-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue2-0搭建Vue脚手架/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue2.0搭建Vue脚手架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  786字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Vue2-0搭建Vue脚手架（vue-cli）"><a href="#Vue2-0搭建Vue脚手架（vue-cli）" class="headerlink" title="Vue2.0搭建Vue脚手架（vue-cli）"></a>Vue2.0搭建Vue脚手架（vue-cli）</h2><hr>
+
+
+<p>随着vue.js越来越火爆，更多的项目都用到vue进行开发，在实际的开发项目中如何搭建开发脚手架呢，今天跟大家分享一下，首先需要了解的知识：<br><a id="more"></a></p>
+<blockquote>
+<ul>
+<li>Html</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Css</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Javascript</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Node.js 环境（npm包管理工具）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Webpack 自动化构建工具</li>
+</ul>
+</blockquote>
+<p>一、安装node.js</p>
+<ul>
+<li>进入官网下载node.js</li>
+</ul>
+<p>二、安装 cnpm</p>
+<p>1、说明：npm（node package manager）是nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）；</p>
+<p>2、使用npm安装插件：命令提示符执行npm install <name></name></p>
+<p>3、选装 cnpm  因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，所以我们乐于分享的淘宝团队干了这事！来自官网：<code>“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</code>;</p>
+<blockquote>
+<p>安装：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>输入<code>cnpm -v</code>，可以查看当前cnpm版本</p>
+<p>三、安装vue-cli脚手架构建工具</p>
+<p>vue-cli 提供一个官方命令行工具，可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需几分钟即可创建并启动一个带热重载、保存时静态检查以及可用于生产环境的构建配置的项目：</p>
+<blockquote>
+<p>安装：$ cnpm install vue-cli –g     //g表示全局安装</p>
+</blockquote>
+<p>安装完成之后输入<code>vue -V</code>（注意这里是大写的“V”），如下图，如果出现相应的版本号，则说明安装成功。<br><img src="./1.jpg" alt="Alt text"></p>
+<p>四、创建一个基于webpack模板的新项目</p>
+<p>要创建项目，首先我们要选定目录，然后再命令行中把目录转到选定的目录。可以使用：</p>
+<blockquote>
+<p>$ vue init webpack my-app      // my-app为自定义项目名<br><img src="/images/1538124820712.png" alt="Alt text"><br><img src="/images/2.jpg" alt="Alt text"></p>
+</blockquote>
+<p> 运行初始化命令的时候回让用户输入几个基本的选项，如项目名称，描述，作者等信息，如果不想填直接回车默认就好</p>
+<blockquote>
+<ul>
+<li>Project name (my-app) # 项目名称（我的项目）</li>
+<li>Project description (A Vue.js project) # 项目描述一个Vue.js 项目</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Author 作者（你的名字）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Install vue-router? (Y/n) # 是否安装Vue路由，也就是以后是spa（但页面应用需要的模块）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Use ESLint to lint your code? (Y/n) # 使用 ESLint 到你的代码？ （Y [ yes ] / N [ no ]）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Pick an ESLint preset (Use arrow keys) # 选择一个预置ESLint（使用箭头键）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Setup unit tests with Karma + Mocha? (Y/n) # 设置单元测Karma + Mocha？ （Y/ N）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Setup e2e tests with Nightwatch? (Y/n) # 设置端到端测试，Nightwatch？ （Y/ N）</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>注：当然这些都看你自己个人的情况</li>
+</ul>
+</blockquote>
+<p><img src="/images/1538124497114.png" alt="Alt text"></p>
+<p>五、运行项目</p>
+<p> $ cnpm run dev</p>
+<p>运行成功后，浏览器直接显示的是页面如下：<br>六、安装项目所需要的依赖</p>
+<p>刚初始化的项目是没有依赖的，如果运行会报类似这样的错误，输入命令</p>
+<p>$ cnpm install</p>
 
       
     </div>
+    
+    
+    
 
+    
+        <div>
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+            <a href="/tags/vue-cli/" rel="tag"><i class="fa fa-tag"></i> vue-cli</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/20/JavaScript之原型与原型链/" rel="next" title="JavaScript之原型与原型链">
+                <i class="fa fa-chevron-left"></i> JavaScript之原型与原型链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/26/如何防止XSS攻击/" rel="prev" title="如何防止XSS攻击">
+                如何防止XSS攻击 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b7587f8bf792868" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -355,6 +630,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -375,8 +654,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -463,6 +751,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue2-0搭建Vue脚手架（vue-cli）"><span class="nav-number">1.</span> <span class="nav-text">Vue2.0搭建Vue脚手架（vue-cli）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -623,6 +927,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
